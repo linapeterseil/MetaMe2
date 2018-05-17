@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- include aframe -->
+<script src="js/aframe.min.js"></script>
+<!-- include ar.js -->
+
+<script src="js/aframe-ar.js"></script>
+
+
+<!-- to load .ply model -->
+<script src="https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"></script>
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'><div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+	<a href="https://github.com/jeromeetienne/AR.js/" target="_blank">AR.js</a> - Model of A-Frame logo in augmented reality
+	<br/>
+	Contact me any time at <a href='https://twitter.com/jerome_etienne' target='_blank'>@jerome_etienne</a>
+</div>
+	<!-- <a-scene embedded arjs='sourceType: video; sourceUrl:../../data/videos/headtracking.mp4;'> -->
+	<a-scene embedded arjs='sourceType: webcam'>
+	
+	<a-assets>
+			<!--<a-asset-item id="assetAframe" src="models/ply/final.ply"></a-asset-item>-->
+			<a-asset-item id="horse-obj" src="models/obj/untitled__nahezufinal.obj"></a-asset-item>
+			<a-asset-item id="horse-mtl" src="models/obj/untitled__nahezufinal.mtl"></a-asset-item>
+			<a-mixin id="giant" scale="0.2 0.2 0.2"></a-mixin>
+	</a-assets>
+				
+		<!-- <a-marker type='unknown'> -->
+		<!--<a-entity ply-model="src: #assetAframe" rotation='-90 0 0'scale='0.15 0.15 0.15' position="0 1 0"></a-entity> -->
+		<a-entity mixin="giant" obj-model="obj: #horse-obj; mtl: #horse-mtl" rotation='0 0 0' position="0 0.5 0"></a-entity>-->
+
+		<a-marker-camera preset='hiro'></a-marker-camera>
+		</a-entity>
+	</a-scene>
+</body>
+</html>
